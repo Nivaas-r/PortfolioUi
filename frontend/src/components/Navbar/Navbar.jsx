@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useActiveSection } from '../../hooks/useActiveSection';
+import resumeFile from '../../assets/documents/resume.pdf';
 import './Navbar.css';
 
 const NAV_LINKS = [
@@ -80,7 +81,7 @@ export default function Navbar() {
 
         <div className="navbar__actions">
           <a
-            href="/resume.pdf"
+            href={resumeFile}
             download="Nivaas_Ravindran_Resume.pdf"
             className="navbar__resume navbar__resume--desktop"
           >
@@ -116,7 +117,7 @@ export default function Navbar() {
           ))}
         </nav>
         <a
-          href="/resume.pdf"
+          href={resumeFile}
           download="Nivaas_Ravindran_Resume.pdf"
           className="navbar__resume navbar__resume--mobile"
           onClick={handleLinkClick}
