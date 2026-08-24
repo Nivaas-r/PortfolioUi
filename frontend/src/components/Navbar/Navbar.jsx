@@ -12,6 +12,20 @@ const NAV_LINKS = [
 
 const SECTION_IDS = NAV_LINKS.map((link) => link.id);
 
+// Scrolls to a section and sets the URL correctly: a bare "/" for home
+// (not "/#home"), and "/#section" for everything else — without letting
+// the browser append hash junk on repeat clicks.
+function scrollToSection(id) {
+  const el = document.getElementById(id);
+  if (!el) return;
+
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  el.scrollIntoView({ behavior: prefersReducedMotion ? 'auto' : 'smooth' });
+
+  const newUrl = id === 'home' ? window.location.pathname : `${window.location.pathname}#${id}`;
+  window.history.replaceState(null, '', newUrl);
+}
+
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -34,10 +48,16 @@ export default function Navbar() {
 
   const handleLinkClick = () => setIsMenuOpen(false);
 
+  const handleNavClick = (event, id) => {
+    event.preventDefault();
+    scrollToSection(id);
+    setIsMenuOpen(false);
+  };
+
   return (
     <header className={`navbar ${isScrolled ? 'navbar--scrolled' : ''}`}>
       <div className="navbar__inner container">
-        <a href="#home" className="navbar__brand" onClick={handleLinkClick}>
+        <a href="#home" className="navbar__brand" onClick={(e) => handleNavClick(e, 'home')}>
           <span className="navbar__monogram">NR</span>
           <span className="navbar__identity">
             <span className="navbar__name">Nivaas Ravindran</span>
@@ -51,6 +71,7 @@ export default function Navbar() {
               key={link.id}
               href={`#${link.id}`}
               className={`navbar__link ${activeId === link.id ? 'navbar__link--active' : ''}`}
+              onClick={(e) => handleNavClick(e, link.id)}
             >
               {link.label}
             </a>
@@ -60,9 +81,8 @@ export default function Navbar() {
         <div className="navbar__actions">
           <a
             href="/resume.pdf"
+            download="Nivaas_Ravindran_Resume.pdf"
             className="navbar__resume navbar__resume--desktop"
-            target="_blank"
-            rel="noopener noreferrer"
           >
             Resume
             <ArrowIcon />
@@ -89,7 +109,7 @@ export default function Navbar() {
               key={link.id}
               href={`#${link.id}`}
               className={`navbar__mobile-link ${activeId === link.id ? 'navbar__mobile-link--active' : ''}`}
-              onClick={handleLinkClick}
+              onClick={(e) => handleNavClick(e, link.id)}
             >
               {link.label}
             </a>
@@ -97,9 +117,8 @@ export default function Navbar() {
         </nav>
         <a
           href="/resume.pdf"
+          download="Nivaas_Ravindran_Resume.pdf"
           className="navbar__resume navbar__resume--mobile"
-          target="_blank"
-          rel="noopener noreferrer"
           onClick={handleLinkClick}
         >
           Download Resume
