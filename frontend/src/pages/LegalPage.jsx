@@ -136,6 +136,9 @@ const CONTENT = {
 
 export default function LegalPage({ type }) {
   const content = CONTENT[type] || CONTENT.privacy;
+  
+  // Dynamically reads the base URL (e.g., /PortfolioUi/) from your vite.config.js
+  const baseUrl = import.meta.env.BASE_URL;
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -151,7 +154,7 @@ export default function LegalPage({ type }) {
       <main className="legal-page">
         <div className="legal-page__container container">
           <header className="legal-page__header">
-            <a className="legal-page__back" href="/" aria-label="Back to portfolio">
+            <a className="legal-page__back" href={baseUrl} aria-label="Back to portfolio">
               ← BACK TO PORTFOLIO
             </a>
             <span className="legal-page__eyebrow">{content.eyebrow}</span>
@@ -174,8 +177,9 @@ export default function LegalPage({ type }) {
           <footer className="legal-page__footer">
             <span>© {new Date().getFullYear()} Nivaas Ravindran. All rights reserved.</span>
             <div>
-              <a href="/privacy">Privacy Policy</a>
-              <a href="/terms">Terms of Use</a>
+              <a href={`${baseUrl}terms`}>Terms of Use</a>
+              <span className="footer-separator">·</span>
+              <a href={`${baseUrl}privacy`}>Privacy Policy</a>
             </div>
           </footer>
         </div>

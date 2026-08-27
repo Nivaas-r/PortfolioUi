@@ -51,14 +51,6 @@ export default function Contact() {
           <a href="https://www.linkedin.com/in/nivaas-ravindran/" target="_blank" rel="noreferrer" className="contact__link"><span>LINKEDIN</span><span>↗</span></a>
           <a href="mailto:iamnivaasr@gmail.com" className="contact__link"><span>EMAIL</span><span>↗</span></a>
         </div>
-
-        <footer className="contact__footer">
-          <div className="contact__footer-brand"><strong>NIVAAS R</strong> <div className="contact__footer-status">
-            <span className="contact__status-dot" /> SYSTEMS STILL BUILDING</div></div>
-           <a href="/privacy">Privacy Policy</a>
-            <a href="/terms">Terms of Use</a>
-          <span className="contact__footer-copy">© {new Date().getFullYear()} Nivaas Ravindran. All rights reserved.</span>
-        </footer>
       </div>
     </section>
   );
