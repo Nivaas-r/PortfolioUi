@@ -8,4 +8,8 @@ export default defineConfig({
   // static assets — imported as a bundled/hashed URL, not inlined or
   // parsed as code.
   assetsInclude: ['**/*.pdf'],
+   base: '/PortfolioUi/',
 })
+
+
+
