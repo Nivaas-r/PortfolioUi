@@ -33,7 +33,7 @@ export default function Contact() {
             <div className="contact__terminal-label"><span className="contact__terminal-dot" /> connection.available()</div>
             <h3>Have a project, opportunity or idea?</h3>
             <p>Let us talk about backend systems, distributed architecture and problems worth engineering well.</p>
-            <a href="mailto:your.email@example.com" className="contact__button">LET'S CONNECT</a>
+            <a href="mailto:iamnivaasr@gmail.com" className="contact__button">LET'S CONNECT</a>
           </div>
 
           <div className="contact__system" aria-hidden="true">
@@ -47,9 +47,9 @@ export default function Contact() {
         </div>
 
         <div className="contact__links">
-          <a href="https://github.com/" target="_blank" rel="noreferrer" className="contact__link"><span>GITHUB</span><span>↗</span></a>
-          <a href="https://www.linkedin.com/" target="_blank" rel="noreferrer" className="contact__link"><span>LINKEDIN</span><span>↗</span></a>
-          <a href="mailto:your.email@example.com" className="contact__link"><span>EMAIL</span><span>↗</span></a>
+          <a href="https://github.com/Nivaas-r" target="_blank" rel="noreferrer" className="contact__link"><span>GITHUB</span><span>↗</span></a>
+          <a href="https://www.linkedin.com/in/nivaas-ravindran/" target="_blank" rel="noreferrer" className="contact__link"><span>LINKEDIN</span><span>↗</span></a>
+          <a href="mailto:iamnivaasr@gmail.com" className="contact__link"><span>EMAIL</span><span>↗</span></a>
         </div>
 
         <footer className="contact__footer">
