@@ -1,119 +1,18 @@
-.architecture {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
-  padding: var(--space-6);
-  box-shadow: var(--shadow-md);
-}
 
-.architecture__header {
-  display: flex;
-  align-items: center;
-  gap: var(--space-2);
-  font-family: var(--font-mono);
-  font-size: 12.5px;
-  font-weight: 600;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  color: var(--violet);
-  margin-bottom: var(--space-5);
-}
-
-.architecture__diagram {
-  width: 100%;
-  height: auto;
-  display: block;
-  overflow: visible;
-}
-
-/* ---- Connectors ---- */
-.connector {
-  fill: none;
-  stroke: var(--border);
-  stroke-width: 1.6;
-  transition: stroke var(--duration-base) var(--ease), stroke-width var(--duration-base) var(--ease);
-}
-
-.connector--active {
-  stroke: url(#connector-gradient);
-  stroke-width: 2.2;
-}
-
-/* ---- Nodes ---- */
-.node {
-  cursor: pointer;
-  outline: none;
-}
-
-.node__rect {
-  fill: var(--bg);
-  stroke: var(--border);
-  stroke-width: 1.4;
-  transition: fill var(--duration-base) var(--ease), stroke var(--duration-base) var(--ease),
-    transform var(--duration-base) var(--ease);
-  transform-box: fill-box;
-  transform-origin: center;
-}
-
-.node__label {
-  font-family: var(--font-ui);
-  font-size: 12.5px;
-  font-weight: 600;
-  fill: var(--text);
-}
-
-.node__sublabel {
-  font-family: var(--font-mono);
-  font-size: 10px;
-  fill: var(--text-muted);
-}
-
-.node g {
-  color: var(--text-muted);
-  transition: color var(--duration-base) var(--ease);
-}
-
-.node--active .node__rect {
-  fill: var(--surface);
-  stroke: var(--violet);
-  transform: translateY(-2px);
-}
-
-.node--active g {
-  color: var(--violet);
-}
-
-.node:focus-visible .node__rect {
-  stroke: var(--blue);
-  stroke-width: 2;
-}
-
-/* ---- Caption panel ---- */
-.architecture__caption {
-  margin-top: var(--space-5);
-  padding-top: var(--space-4);
-  border-top: 1px solid var(--border);
-  min-height: 56px;
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-1);
-}
-
-.architecture__caption-label {
-  font-family: var(--font-mono);
-  font-size: 12.5px;
-  font-weight: 600;
-  color: var(--blue);
-}
-
-.architecture__caption-desc {
-  font-size: 13.5px;
-  color: var(--text-muted);
-  line-height: 1.5;
-}
-
-@media (max-width: 640px) {
-  .architecture {
-    padding: var(--space-4);
-  }
-}
+.architecture { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 34px 38px 30px; }
+.architecture__header { display: flex; align-items: center; gap: 8px; font-family: var(--font-mono); font-size: 13px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; color: var(--blue); margin-bottom: 28px; }
+.architecture__diagram { width: 100%; height: auto; display: block; overflow: visible; }
+.connector { fill: none; stroke: #c7ccd6; stroke-width: 1.5; transition: stroke var(--duration-base) var(--ease), stroke-width var(--duration-base) var(--ease); }
+.connector--active { stroke: var(--blue); stroke-width: 2; }
+.node { cursor: pointer; outline: none; }
+.node__rect { fill: #fafbfc; stroke: var(--border); stroke-width: 1.3; transition: fill var(--duration-base) var(--ease), stroke var(--duration-base) var(--ease); }
+.node__label { font-family: var(--font-ui); font-size: 14px; font-weight: 600; fill: var(--text); }
+.node__sublabel { font-family: var(--font-mono); font-size: 11px; fill: var(--text-muted); }
+.node g { color: var(--text-muted); transition: color var(--duration-base) var(--ease); }
+.node--active .node__rect { fill: var(--accent-soft); stroke: var(--blue); }
+.node--active g { color: var(--blue); }
+.node:focus-visible .node__rect { stroke: var(--blue); stroke-width: 2; }
+.architecture__caption { margin-top: 24px; padding-top: 16px; border-top: 1px solid var(--border); min-height: 56px; display: flex; flex-direction: column; gap: 4px; }
+.architecture__caption-label { font-family: var(--font-mono); font-size: 13px; font-weight: 700; color: var(--blue); }
+.architecture__caption-desc { font-size: 14px; color: var(--text-muted); line-height: 1.55; }
+@media (max-width: 640px) { .architecture { padding: 22px 18px 20px; } }

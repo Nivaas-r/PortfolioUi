@@ -1,0 +1,51 @@
+
+.about-section { padding: 76px 0 88px; background: var(--surface); scroll-margin-top: var(--header-height); }
+.about-section__heading { display: grid; grid-template-columns: minmax(0, 1fr) minmax(320px, 0.7fr); gap: 64px; align-items: end; margin-bottom: 36px; }
+.about-section__heading h2 { margin-top: 12px; max-width: 760px; font-size: clamp(32px, 4vw, 54px); line-height: 1.04; letter-spacing: -0.04em; }
+.about-section__heading > p { max-width: 52ch; justify-self: end; color: var(--text-muted); font-size: 15px; line-height: 1.75; }
+.section-eyebrow, .card-label { font-family: var(--font-mono); font-size: 13px; line-height: 1; font-weight: 700; letter-spacing: 0.09em; color: var(--blue); }
+
+.about-intro { display: grid; grid-template-columns: minmax(300px, 0.82fr) minmax(0, 1.18fr); gap: 24px; }
+.about-card { min-width: 0; border: 1px solid var(--border); background: var(--surface); overflow: hidden; }
+.about-card--portrait { padding: 10px; border-radius: 14px 14px 4px 14px; }
+.portrait-frame { position: relative; min-height: 520px; overflow: hidden; background: var(--surface-dark); }
+.portrait-frame__image { width: 100%; height: 100%; min-height: 520px; object-fit: cover; object-position: center; }
+.portrait-frame::after { content: ''; position: absolute; inset: 58% 0 0; background: rgba(5, 10, 24, 0.62); pointer-events: none; }
+.portrait-frame__caption { position: absolute; z-index: 1; left: 18px; bottom: 18px; display: flex; align-items: center; gap: 9px; padding: 8px 10px; border: 1px solid rgba(255,255,255,0.2); background: rgba(8,15,32,0.86); color: white; font-family: var(--font-mono); font-size: 10.5px; }
+.portrait-frame__status { width: 7px; height: 7px; flex: 0 0 7px; border-radius: 50%; background: #63b98b; }
+
+.about-card--story { padding: clamp(28px, 4vw, 48px); border-radius: 4px 14px 14px 14px; display: flex; flex-direction: column; justify-content: center; }
+.about-card--story h3 { max-width: 760px; margin: 18px 0 24px; font-size: clamp(26px, 3vw, 40px); line-height: 1.1; letter-spacing: -0.03em; }
+.about-card--story p { max-width: 67ch; color: var(--text-muted); font-size: 14px; line-height: 1.8; }
+.about-card--story p + p { margin-top: 16px; }
+.about-card__signature { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 28px; }
+.about-card__signature span { padding: 6px 9px; border: 1px solid var(--border); border-radius: 4px; background: #fafbfc; color: var(--text); font-family: var(--font-mono); font-size: 10.5px; }
+
+.about-card--approach { margin-top: 24px; padding: 32px; border-radius: 4px 14px 14px 14px; }
+.card-header-row { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 28px; }
+.card-header-row h3 { margin-top: 12px; font-size: 22px; letter-spacing: -0.02em; }
+.card-code { color: var(--text-muted); font-family: var(--font-mono); font-size: 12px; }
+.approach-list { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.approach-item { padding: 0 20px; border-left: 1px solid var(--border); }
+.approach-item:first-child { padding-left: 0; border-left: 0; }
+.approach-item__number { display: block; margin-bottom: 22px; color: var(--blue); font-family: var(--font-mono); font-size: 12px; font-weight: 700; }
+.approach-item h4 { margin-bottom: 7px; font-size: 14px; }
+.approach-item p { color: var(--text-muted); font-size: 12px; line-height: 1.65; }
+
+@media (max-width: 900px) {
+  .about-section__heading { grid-template-columns: 1fr; gap: 18px; }
+  .about-section__heading > p { justify-self: start; }
+  .about-intro { grid-template-columns: 1fr; }
+  .approach-list { grid-template-columns: 1fr 1fr; gap: 24px 0; }
+  .approach-item:nth-child(3) { border-left: 0; padding-left: 0; }
+}
+@media (max-width: 560px) {
+  .about-section { padding: 62px 0 72px; }
+  .about-section__heading h2 { font-size: 34px; }
+  .portrait-frame, .portrait-frame__image { min-height: 420px; }
+  .about-card--approach { padding: 24px; }
+  .card-header-row { align-items: flex-start; flex-direction: column; }
+  .approach-list { grid-template-columns: 1fr; gap: 0; }
+  .approach-item, .approach-item:first-child, .approach-item:nth-child(3) { padding: 18px 0; border-left: 0; border-top: 1px solid var(--border); }
+  .approach-item:first-child { border-top: 0; padding-top: 0; }
+}

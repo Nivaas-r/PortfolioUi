@@ -4,7 +4,7 @@ import './Hero.css';
 const PROOF_POINTS = [
   { value: '4+', label: 'Years Experience' },
   { value: '15+', label: 'Projects / Systems' },
-  { value: '100%', label: 'Engineering Focus' },
+  { value: 'Java', label: 'Primary Stack' },
 ];
 
 export default function Hero() {
@@ -17,17 +17,16 @@ export default function Hero() {
           </span>
 
           <h1 className="hero-content__headline">
-            Building scalable,
+            Backend systems,
             <br />
-            reliable &amp; secure
+            designed around
             <br />
-            <span className="hero-content__headline-accent">backend systems</span>
+            <span className="hero-content__headline-accent">real constraints</span>
           </h1>
 
           <p className="hero-content__subtext">
-            I design and build high-performance backend applications, distributed
-            systems and data pipelines that solve real world problems and create
-            impact.
+            I design and build Java services, APIs and data workflows where reliability,
+            clear boundaries and predictable behaviour matter in production.
           </p>
 
           <div className="hero-content__ctas">

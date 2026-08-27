@@ -62,7 +62,6 @@ export default function Navbar() {
           <span className="navbar__monogram">NR</span>
           <span className="navbar__identity">
             <span className="navbar__name">Nivaas Ravindran</span>
-            <span className="navbar__title">Java Backend Engineer</span>
           </span>
         </a>
 

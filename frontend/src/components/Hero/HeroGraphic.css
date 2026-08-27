@@ -1,0 +1,43 @@
+.hero-graphic {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 5;
+  transition: opacity var(--duration-base) var(--ease);
+}
+
+.hero-graphic--hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.hero-graphic__stage {
+  perspective: 900px;
+  width: 150px;
+  height: 158px;
+}
+
+.hero-graphic__img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform 150ms ease-out;
+  filter: drop-shadow(0 24px 32px rgba(76, 111, 255, 0.28));
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-graphic__img {
+    transition: none;
+  }
+}
+
+/* Hero grid collapses to one column below this width — no room to
+   float an overlapping graphic between columns that no longer exist
+   side by side. */
+@media (max-width: 980px) {
+  .hero-graphic {
+    display: none;
+  }
+}

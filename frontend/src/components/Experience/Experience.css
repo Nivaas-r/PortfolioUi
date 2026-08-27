@@ -1,0 +1,66 @@
+
+.experience { position: relative; padding: 76px 0 88px; background: #ddebfc; overflow: hidden; }
+.experience__container { position: relative; }
+.experience__heading { display: flex; align-items: flex-end; justify-content: space-between; gap: 32px; margin-bottom: 42px; }
+.experience__heading-copy { max-width: 760px; }
+.experience__eyebrow { color: var(--blue); font-family: var(--font-mono); font-size: 13px; font-weight: 700; letter-spacing: 0.09em; }
+.experience__heading h2 { margin-top: 14px; font-size: clamp(34px, 4vw, 54px); line-height: 1.04; letter-spacing: -0.04em; }
+.experience__heading p { max-width: 690px; margin-top: 14px; color: var(--text-muted); font-size: 15px; line-height: 1.75; }
+.experience__progress-label { flex-shrink: 0; padding: 8px 11px; border: 1px solid var(--border); border-radius: 5px; background: var(--surface); color: var(--text); font-family: var(--font-mono); font-size: 12px; font-weight: 700; }
+.experience__progress-label span { margin: 0 6px; color: var(--text-muted); }
+
+.experience__journey { position: relative; min-height: 1580px; }
+.experience__svg { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; overflow: visible; }
+.experience__path-base, .experience__path-progress { fill: none; stroke-linecap: round; stroke-linejoin: round; }
+.experience__path-base { stroke: #d6dae2; stroke-width: 2; stroke-dasharray: 4 8; }
+.experience__path-progress { stroke: var(--blue); stroke-width: 3; stroke-dasharray: 1; transition: stroke-dashoffset 120ms linear; }
+.experience__node { fill: var(--surface); stroke: #cdd3de; stroke-width: 3; transition: fill 240ms var(--ease), stroke 240ms var(--ease); }
+.experience__node--active { fill: var(--blue); stroke: var(--surface); }
+.experience__node-core { fill: var(--surface); }
+
+.experience__milestones { position: relative; min-height: 1580px; }
+.experience-card { position: absolute; width: min(470px, 44%); display: flex; align-items: flex-start; gap: 14px; opacity: 0.5; transform: translateY(10px); transition: opacity 300ms var(--ease), transform 300ms var(--ease), border-color 300ms var(--ease); }
+.experience-card--active { opacity: 1; transform: translateY(0); }
+.experience-card--left { left: 0; }
+.experience-card--right { right: 0; }
+.experience-card:nth-child(1) { top: 230px; }
+.experience-card:nth-child(2) { top: 580px; }
+.experience-card:nth-child(3) { top: 930px; }
+.experience-card:nth-child(4) { top: 1280px; }
+.experience-card__year { flex: 0 0 52px; padding-top: 15px; color: var(--blue); font-family: var(--font-mono); font-size: 14px; font-weight: 700; text-align: center; }
+.experience-card__content { flex: 1; padding: 22px 24px 24px; border: 1px solid var(--border); border-radius: 4px 14px 14px 14px; background: var(--surface); }
+.experience-card--active .experience-card__content { border-color: #b9c6f2; }
+.experience-card__topline { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 12px; }
+.experience-card__stage { color: var(--blue); font-family: var(--font-mono); font-size: 12px; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; }
+.experience-card__period { color: var(--text-muted); font-family: var(--font-mono); font-size: 11px; }
+.experience-card h3 { font-size: 19px; line-height: 1.25; letter-spacing: -0.02em; }
+.experience-card__company { margin-top: 5px; color: var(--violet); font-size: 13px; font-weight: 600; }
+.experience-card__summary { margin-top: 13px; color: var(--text-muted); font-size: 13px; line-height: 1.65; }
+.experience-card__technologies { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 17px; }
+.experience-card__technologies span { padding: 5px 8px; border: 1px solid var(--border); border-radius: 4px; background: #fafbfc; color: #596478; font-family: var(--font-mono); font-size: 12px; }
+
+.experience__footer { display: flex; align-items: center; gap: 14px; margin-top: 22px; color: var(--text-muted); font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.05em; }
+.experience__footer-line { flex: 1; height: 1px; background: var(--border); }
+.experience__footer strong { color: var(--text); }
+
+@media (max-width: 900px) {
+  .experience { padding: 64px 0 76px; }
+  .experience__heading { align-items: flex-start; flex-direction: column; margin-bottom: 44px; }
+  .experience__journey, .experience__milestones { min-height: 1580px; }
+  .experience-card { width: 48%; }
+  .experience-card:nth-child(1) { top: 200px; } .experience-card:nth-child(2) { top: 530px; } .experience-card:nth-child(3) { top: 860px; } .experience-card:nth-child(4) { top: 1190px; }
+}
+@media (max-width: 680px) {
+  .experience { padding: 58px 0 68px; }
+  .experience__heading h2 { font-size: 34px; }
+  .experience__heading p { font-size: 14px; }
+  .experience__journey, .experience__milestones { min-height: auto; }
+  .experience__svg { display: none; }
+  .experience__milestones { display: grid; gap: 16px; }
+  .experience-card, .experience-card--left, .experience-card--right { position: relative; inset: auto; width: 100%; opacity: 1; transform: none; }
+  .experience-card:nth-child(1), .experience-card:nth-child(2), .experience-card:nth-child(3), .experience-card:nth-child(4) { top: auto; }
+  .experience-card__year { flex-basis: 42px; padding-top: 14px; font-size: 10px; }
+  .experience-card__content { padding: 18px; }
+  .experience-card h3 { font-size: 17px; }
+  .experience-card__period { text-align: right; }
+}

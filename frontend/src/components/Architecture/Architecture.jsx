@@ -25,13 +25,7 @@ export default function Architecture() {
         role="img"
         aria-label="Diagram of a typical backend system: clients call an API gateway, which routes to microservices, which publish events through Kafka to Redis, PostgreSQL, and Elasticsearch."
       >
-        <defs>
-          <linearGradient id="connector-gradient" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" style={{ stopColor: 'var(--blue)' }} />
-            <stop offset="55%" style={{ stopColor: 'var(--violet)' }} />
-            <stop offset="100%" style={{ stopColor: 'var(--pink)' }} />
-          </linearGradient>
-        </defs>
+
 
         <g className="architecture__connectors">
           {CONNECTIONS.map(([from, to]) => (
