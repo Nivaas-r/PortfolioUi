@@ -1,0 +1,11 @@
+Put your actual resume PDF here, named exactly:
+
+    resume.pdf
+
+Full path: frontend/public/resume.pdf
+
+The Navbar's "Resume" button already points to /resume.pdf with a
+`download` attribute, so once the real file exists here, clicking it
+will download (not open in a new tab) — no code changes needed.
+
+Delete this note file once resume.pdf is in place.
