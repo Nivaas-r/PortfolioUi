@@ -15,8 +15,8 @@ export default function Footer() {
         </div>
 
         <nav className="contact__footer-links" aria-label="Legal">
-          <a href="/PortfolioUi/privacy">Privacy Policy</a>
-          <a href="/PortfolioUi/terms">Terms of Use</a>
+          <a href="#/privacy">Privacy Policy</a>
+          <a href="#/terms">Terms of Use</a>
         </nav>
 
         <span className="contact__footer-copy">

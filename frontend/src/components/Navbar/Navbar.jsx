@@ -18,31 +18,14 @@ function getBaseUrl() {
 }
 
 function isLegalPage() {
-  const pathname = window.location.pathname.replace(/\/+$/, '');
-  const base = getBaseUrl().replace(/\/+$/, '');
-
-  return (
-    pathname === `${base}/privacy` ||
-    pathname === `${base}/terms`
-  );
+  const hash = window.location.hash;
+  return hash === '#/privacy' || hash === '#/terms';
 }
 
 function navigateToSection(id) {
   const baseUrl = getBaseUrl();
 
-  /*
-   * If we are already on the portfolio page,
-   * scroll directly to the section.
-   */
-  const currentPath = window.location.pathname;
-  const basePath = baseUrl.replace(/\/+$/, '');
-
-  const isPortfolioPage =
-    currentPath === basePath ||
-    currentPath === `${basePath}/` ||
-    currentPath === '/';
-
-  if (isPortfolioPage) {
+  if (!isLegalPage()) {
     const element = document.getElementById(id);
 
     if (element) {
@@ -67,14 +50,10 @@ function navigateToSection(id) {
   }
 
   /*
-   * If we are on /terms or /privacy,
-   * navigate back to the actual portfolio page
-   * with the requested section hash.
+   * We're on a #/terms or #/privacy hash — navigate back to the
+   * actual portfolio content with the requested section hash.
    *
-   * Example:
-   * /PortfolioUi/terms
-   *       ↓
-   * /PortfolioUi/#about
+   * Example: #/terms -> #about
    */
   const targetUrl =
     id === 'home'
@@ -82,6 +61,8 @@ function navigateToSection(id) {
       : `${baseUrl}#${id}`;
 
   window.location.href = targetUrl;
+  // Same-document hash change fires 'hashchange' automatically —
+  // App.jsx listens for it and swaps back to the normal layout.
 }
 
 export default function Navbar() {
