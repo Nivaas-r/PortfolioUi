@@ -177,9 +177,9 @@ export default function LegalPage({ type }) {
           <footer className="legal-page__footer">
             <span>© {new Date().getFullYear()} Nivaas Ravindran. All rights reserved.</span>
             <div>
-              <a href={`${baseUrl}terms`}>Terms of Use</a>
+              <a href="#/terms">Terms of Use</a>
               <span className="footer-separator">·</span>
-              <a href={`${baseUrl}privacy`}>Privacy Policy</a>
+              <a href="#/privacy">Privacy Policy</a>
             </div>
           </footer>
         </div>
